@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 const hiddenInputStyle = {
@@ -11,72 +11,54 @@ const hiddenInputStyle = {
   height: '100%',
 };
 
-class FileInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      files: [],
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleKey = this.handleKey.bind(this);
-    this.handleInputRef = this.handleInputRef.bind(this);
-  }
+function FileInput({ renderButton, style, className, onChange, ...props }) {
+  const [value, setValue] = useState('');
+  const [files, setFiles] = useState([]);
+  const inputRef = useRef(null);
 
-  handleChange(e) {
-    const { onChange } = this.props;
+  const handleChange = e => {
     if (onChange) {
       onChange(e);
     }
-    this.setState({
-      value: e.target.value,
-      files: e.target.files,
-    });
-  }
+    setValue(e.target.value);
+    setFiles(e.target.files);
+  };
 
-  handleKey(e) {
+  const handleKey = e => {
     if (e.which === 32 || e.which === 13) {
       e.preventDefault();
-      if (this.inputRef) {
-        this.inputRef.click();
+      if (inputRef.current) {
+        inputRef.current.click();
       }
     }
-  }
+  };
 
-  handleInputRef(ref) {
-    this.inputRef = ref;
-  }
-
-  render() {
-    const { value, files } = this.state;
-    const { renderButton, style, className, ...props } = this.props;
-
-    return (
-      <label
-        style={Object.assign(
-          {
-            position: 'relative',
-            overflow: 'hidden',
-          },
-          style
-        )}
-        className={className}
-        tabIndex={0}
-        onKeyPress={this.handleKey}
-        onKeyUp={this.handleKey}
-      >
-        <input
-          {...props}
-          ref={this.handleInputRef}
-          style={renderButton ? hiddenInputStyle : {}}
-          type="file"
-          onChange={this.handleChange}
-          readOnly
-          tabIndex={-1}
-        />
-        {renderButton && renderButton(value, files)}
-      </label>
-    );
-  }
+  return (
+    <label
+      style={Object.assign(
+        {
+          position: 'relative',
+          overflow: 'hidden',
+        },
+        style
+      )}
+      className={className}
+      tabIndex={0}
+      onKeyPress={handleKey}
+      onKeyUp={handleKey}
+    >
+      <input
+        {...props}
+        ref={inputRef}
+        style={renderButton ? hiddenInputStyle : {}}
+        type="file"
+        onChange={handleChange}
+        readOnly
+        tabIndex={-1}
+      />
+      {renderButton && renderButton(value, files)}
+    </label>
+  );
 }
 
 FileInput.propTypes = {
