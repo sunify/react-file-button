@@ -15,7 +15,11 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "mkdir dist && ./node_modules/.bin/babel src/index.js -o dist/index.js"
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "yarn prebuild && ./node_modules/.bin/babel src --out-dir dist"
   }
 }

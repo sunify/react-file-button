@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.2.3",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-file-button": "../"
   },
   "scripts": {
     "start": "./node_modules/.bin/parcel index.html"

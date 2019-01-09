@@ -14,7 +14,9 @@ const hiddenInputStyle = {
 class FileInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      files: [],
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleKey = this.handleKey.bind(this);
     this.handleInputRef = this.handleInputRef.bind(this);
@@ -27,6 +29,7 @@ class FileInput extends React.Component {
     }
     this.setState({
       value: e.target.value,
+      files: e.target.files,
     });
   }
 
@@ -44,7 +47,7 @@ class FileInput extends React.Component {
   }
 
   render() {
-    const { value } = this.state;
+    const { value, files } = this.state;
     const {
       renderButton,
       style,
@@ -73,7 +76,7 @@ class FileInput extends React.Component {
           readOnly
           tabIndex={-1}
         />
-        {renderButton && renderButton(props.value || value)}
+        {renderButton && renderButton(value, files)}
       </label>
     );
   }
@@ -81,7 +84,10 @@ class FileInput extends React.Component {
 
 FileInput.propTypes = {
   value: PropTypes.any,
+  style: PropTypes.object,
+  className: PropTypes.string,
   renderButton: PropTypes.func,
+  onChange: PropTypes.func,
 };
 
 export default FileInput;
