@@ -1,0 +1,19 @@
+{
+  "name": "react-file-button-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-react": "^7.0.0",
+    "parcel-bundler": "^1.11.0"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.2.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/parcel index.html"
+  }
+}

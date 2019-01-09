@@ -1,0 +1,20 @@
+{
+  "name": "react-file-button",
+  "version": "1.0.0",
+  "description": "Simple and customizable react file input",
+  "main": "index.js",
+  "author": "Alex Lunyov <isuntc@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "15.x || 16.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
+  }
+}
