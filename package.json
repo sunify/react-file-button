@@ -18,6 +18,12 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "react",
+    "component",
+    "file",
+    "render props"
+  ],
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "yarn prebuild && ./node_modules/.bin/babel src --out-dir dist"
