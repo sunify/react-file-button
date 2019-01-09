@@ -6,7 +6,6 @@ Simple and customizable react file input with a11y in mind.
 
 `yarn add react-file-button`/`npm install react-file-button --save`
 
-
 ## Use
 
 ```es6
@@ -19,17 +18,23 @@ const customButtonStyle = {
   padding: '20px 40px',
   borderRadius: 4,
   color: '#000',
-  display: 'inline-block'
+  display: 'inline-block',
 };
 
 <FileButton
   multiple
   renderButton={(value, files) => (
-    <div style={customButtonStyle}>{files.length ? `Files chosen: ${files.length}` : 'Chose files'}</div>
+    <div style={customButtonStyle}>
+      {files.length ? `Files chosen: ${files.length}` : 'Chose files'}
+    </div>
   )}
-/>
+/>;
 ```
 
 ## Props
 
 All input props available plus `renderButton: (value: string, files: FileList | [])` that renders a custom button. Takes two arguments: `value` and `files` and should return react node. `className` and `style` properties will apply on component root (label).
+
+---
+
+Latest version uses hooks and requires `react@16.7.0-alpha.x` to work. You can use `1.x` version if don't want that.
