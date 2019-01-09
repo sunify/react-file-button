@@ -14,6 +14,8 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.15.3"
   },
   "files": [
@@ -25,9 +27,16 @@
     "file",
     "render props"
   ],
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "yarn prebuild && ./node_modules/.bin/babel src --out-dir dist",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "precommit": "./node_modules/.bin/lint-staged"
   }
 }
