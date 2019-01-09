@@ -52,7 +52,6 @@ class FileInput extends React.Component {
       renderButton,
       style,
       className,
-      onChange,
       ...props
     } = this.props;
 
@@ -83,7 +82,6 @@ class FileInput extends React.Component {
 }
 
 FileInput.propTypes = {
-  value: PropTypes.any,
   style: PropTypes.object,
   className: PropTypes.string,
   renderButton: PropTypes.func,

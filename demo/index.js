@@ -11,7 +11,7 @@ const customButtonStyle = {
   borderRadius: 4,
   color: '#000',
   display: 'inline-block'
-}
+};
 
 class App extends React.Component {
   render() {
