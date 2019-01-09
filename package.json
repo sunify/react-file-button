@@ -26,6 +26,7 @@
   ],
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
-    "build": "yarn prebuild && ./node_modules/.bin/babel src --out-dir dist"
+    "build": "yarn prebuild && ./node_modules/.bin/babel src --out-dir dist",
+    "prepublish": "yarn build"
   }
 }
