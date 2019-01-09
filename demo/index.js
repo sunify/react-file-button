@@ -10,27 +10,31 @@ const customButtonStyle = {
   padding: '20px 40px',
   borderRadius: 4,
   color: '#000',
-  display: 'inline-block'
+  display: 'inline-block',
 };
 
 class App extends React.Component {
   render() {
     return (
-      <div style={{ fontFamily: 'Helvetica, sans-serif'}}>
-      <h2>Default</h2>
-      <ReactFB />
-      <h2>Custom</h2>
-      <ReactFB renderButton={(value) => (
-        <div style={customButtonStyle}>{value || 'Chose file'}</div>
-      )} />
-      <h2>Custom (multiple)</h2>
-      <ReactFB
-        multiple
-        renderButton={(_, files) => (
-          <div style={customButtonStyle}>{files.length ? `Files chosen: ${files.length}` : 'Chose files'}</div>
-        )}
-      />
-    </div>
+      <div style={{ fontFamily: 'Helvetica, sans-serif' }}>
+        <h2>Default</h2>
+        <ReactFB />
+        <h2>Custom</h2>
+        <ReactFB
+          renderButton={value => (
+            <div style={customButtonStyle}>{value || 'Chose file'}</div>
+          )}
+        />
+        <h2>Custom (multiple)</h2>
+        <ReactFB
+          multiple
+          renderButton={(_, files) => (
+            <div style={customButtonStyle}>
+              {files.length ? `Files chosen: ${files.length}` : 'Chose files'}
+            </div>
+          )}
+        />
+      </div>
     );
   }
 }

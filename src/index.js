@@ -34,7 +34,7 @@ class FileInput extends React.Component {
   }
 
   handleKey(e) {
-    if(e.which === 32 || e.which === 13){
+    if (e.which === 32 || e.which === 13) {
       e.preventDefault();
       if (this.inputRef) {
         this.inputRef.click();
@@ -48,19 +48,17 @@ class FileInput extends React.Component {
 
   render() {
     const { value, files } = this.state;
-    const {
-      renderButton,
-      style,
-      className,
-      ...props
-    } = this.props;
+    const { renderButton, style, className, ...props } = this.props;
 
     return (
       <label
-        style={Object.assign({
-          position: 'relative',
-          overflow: 'hidden',
-        }, style)}
+        style={Object.assign(
+          {
+            position: 'relative',
+            overflow: 'hidden',
+          },
+          style
+        )}
         className={className}
         tabIndex={0}
         onKeyPress={this.handleKey}
