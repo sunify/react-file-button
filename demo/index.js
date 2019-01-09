@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import ReactFB from '../index';
+import ReactFB from '../src/index';
 
 render(<div style={{ fontFamily: 'Helvetica, sans-serif'}}>
   <h2>Default</h2>

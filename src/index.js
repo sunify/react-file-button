@@ -36,7 +36,6 @@ class FileInput extends React.Component {
       if (this.inputRef) {
         this.inputRef.click();
       }
-      // do click on input
     }
   }
 
