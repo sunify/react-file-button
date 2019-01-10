@@ -16,6 +16,7 @@
     "react-file-button": "../"
   },
   "scripts": {
-    "start": "./node_modules/.bin/parcel index.html"
+    "start": "./node_modules/.bin/parcel --open index.html",
+    "build": "./node_modules/.bin/parcel build --public-url '.' index.html"
   }
 }
