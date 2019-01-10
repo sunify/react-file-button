@@ -35,6 +35,7 @@
     ]
   },
   "scripts": {
+    "test": "exit 0",
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "yarn prebuild && ./node_modules/.bin/babel src --out-dir dist",
     "prepublish": "yarn build",
