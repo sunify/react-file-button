@@ -1,6 +1,6 @@
 {
   "name": "react-file-button",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Simple and customizable react file input",
   "main": "dist/index.js",
   "author": "Alex Lunyov <isuntc@gmail.com>",
