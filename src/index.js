@@ -11,7 +11,7 @@ const hiddenInputStyle = {
   height: '100%',
 };
 
-function FileInput({ renderButton, style, className, onChange, ...props }) {
+function FileButton({ renderButton, style, className, onChange, ...props }) {
   const [value, setValue] = useState('');
   const [files, setFiles] = useState([]);
   const inputRef = useRef(null);
@@ -61,11 +61,11 @@ function FileInput({ renderButton, style, className, onChange, ...props }) {
   );
 }
 
-FileInput.propTypes = {
+FileButton.propTypes = {
   style: PropTypes.object,
   className: PropTypes.string,
   renderButton: PropTypes.func,
   onChange: PropTypes.func,
 };
 
-export default FileInput;
+export default FileButton;

@@ -33,7 +33,7 @@ const customButtonStyle = {
 
 ## Props
 
-All input props available plus `renderButton: (value: string, files: FileList | [])` that renders a custom button. Takes two arguments: `value` and `files` and should return react node. `className` and `style` properties will apply on component root (label).
+All input props available plus `renderButton: (value: string, files: FileList | []) => ReactNode` that renders a custom button. Takes two arguments: `value` and `files` and should return react node. `className` and `style` properties will apply on component root (label).
 
 ---
 

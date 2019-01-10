@@ -19,7 +19,8 @@
     "prettier": "^1.15.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "keywords": [
     "react",
