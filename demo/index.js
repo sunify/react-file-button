@@ -17,6 +17,12 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ fontFamily: 'Helvetica, sans-serif' }}>
+        <h1>
+          <a href="https://github.com/sunify/react-file-button">
+            React File Button
+          </a>{' '}
+          demo
+        </h1>
         <h2>Default</h2>
         <ReactFB />
         <h2>Custom</h2>
