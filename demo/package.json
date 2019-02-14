@@ -11,8 +11,8 @@
   "dependencies": {
     "@babel/preset-env": "^7.2.3",
     "prop-types": "^15.6.2",
-    "react": "16.7.0-alpha.2",
-    "react-dom": "16.7.0-alpha.2",
+    "react": "16.8.1",
+    "react-dom": "16.8.1",
     "react-file-button": "../"
   },
   "scripts": {
